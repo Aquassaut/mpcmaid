@@ -158,12 +158,12 @@ public final class Sample {
 		return new File(dir, dstName);
 	}
 
-	public void copyTo(File dir) throws IOException {
+	public void copyTo(File dir, final boolean convert) throws IOException {
 		final File dst = getDestinationFile(dir);
 		if (dst == null) {
 			return;
 		}
-		Utils.copy(actualFile, dst);
+		Utils.copy(actualFile, dst, convert);
 	}
 
 	public void play() {
